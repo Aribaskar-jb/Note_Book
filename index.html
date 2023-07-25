@@ -1,13 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>table</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <style>
+      table,tr,th{
+        border: 2px solid black;
+        border-collapse: collapse;
+        margin: 20px;
+      }
+      th{
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
+    <form onsubmit="AddData(event)" style="padding: 20px;">
+      <input placeholder="Name" id="Name" type="text" required /><br><br>
+      <input placeholder="Number"  id="Number"  type="number" required/><br><br>
+      <input placeholder="Gmail" id="Gmail" type="email" required /><br><br>
+      <button>Submit</button>
+    </form>
+    <table style="border: 2px solid black;" id="mytable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Number</th>
+          <th>Gmail</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
   </body>
   <script src="table.js"></script>
 </html>
