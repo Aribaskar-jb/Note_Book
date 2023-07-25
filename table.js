@@ -11,16 +11,22 @@ function Edit() {
   }
 }
 function Save() {
-  var table = document.getElementById("mytable");
-  for (var i = 1; i < table.rows.length; i++) {
-    table.rows[i].onclick = function () {
-      this.cells[0].innerHTML = document.getElementById("Name").value;
-      this.cells[1].innerHTML = document.getElementById("Number").value;
-      this.cells[2].innerHTML = document.getElementById("Gmail").value;
-      document.getElementById("Name").value = "";
-      document.getElementById("Number").value = "";
-      document.getElementById("Gmail").value = "";
-    };
+  if (
+    document.getElementById("Name").value != "" &&
+    document.getElementById("Number").value != "" &&
+    document.getElementById("Gmail").value != ""
+  ) {
+    var table = document.getElementById("mytable");
+    for (var i = 1; i < table.rows.length; i++) {
+      table.rows[i].onclick = function () {
+        this.cells[0].innerHTML = document.getElementById("Name").value;
+        this.cells[1].innerHTML = document.getElementById("Number").value;
+        this.cells[2].innerHTML = document.getElementById("Gmail").value;
+        document.getElementById("Name").value = "";
+        document.getElementById("Number").value = "";
+        document.getElementById("Gmail").value = "";
+      };
+    }
   }
 }
 function Delete() {
